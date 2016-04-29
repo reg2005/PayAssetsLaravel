@@ -4,7 +4,8 @@
     "description": "Laravel 5.2 pay assets for Bitcoin pay package (reg2005/BtcPay), Perfect money (reg2005/PmPay) and Qiwi (QiwiPay)",
     "keywords": [
         "reg2005",
-        "Pay Assets"
+        "Pay Assets",
+        "laravel"
     ],
     "homepage": "https://github.com/reg2005/PayAssetsLaravel",
     "license": "MIT",
