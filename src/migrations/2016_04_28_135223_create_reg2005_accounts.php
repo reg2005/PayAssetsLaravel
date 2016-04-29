@@ -22,12 +22,14 @@ class CreateReg2005Accounts extends Migration
                 $table->text('protocol')->nullable();
                 $table->text('address')->nullable();
 
+                $table->decimal('BalanceInUsd', 10)->nullable()->default(0);
+
                 $table->decimal('USD', 10)->nullable()->default(0);
                 $table->decimal('RUB', 10)->nullable()->default(0);
                 $table->decimal('BTC', 14, 8)->nullable()->default(0);
                 $table->decimal('EUR', 10)->nullable()->default(0);
                 $table->decimal('KZT', 10)->nullable()->default(0);
-                $table->decimal('XAU', 10)->nullable()->default(0);
+                $table->decimal('GOLD', 10)->nullable()->default(0);
 
                 $table->decimal('in_turnover_current_monthly', 10)->nullable()->default(0);
                 $table->decimal('out_turnover_current_monthly', 10)->nullable()->default(0);

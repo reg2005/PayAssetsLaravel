@@ -5,17 +5,34 @@ use Carbon\Carbon;
 
 class Exchange extends Model {
 
-    protected $fillable = ['Name', 'Rate', 'Ask', 'Bid', '-id'];
+    protected $fillable = ['Name', 'Currency', 'Rate', 'Ask', 'Bid', '-id'];
 
     protected $table = 'reg2005_exchanges';
 
-    public function getLastExchanges(){
+    public function Xchange($currency, $amount = 0){
+
+        //USD специально убран, т.к. нет смысла доллары переводить в доллары
+        $allow = ['EUR', 'BTC', 'RUB', 'KZT', 'GOLD'];
+
+        if(!in_array($currency, $allow))
+            return $amount;
 
         $item = $this
             ->orderBy('updated_at', 'DESC')
+            ->where('currency', '=', $currency)
             ->first();
 
-        return $item;
+        if(!$item)
+            return NULL;
+
+        if($item->Rate > 1) {
+            $result = $amount / $item->Rate;
+        }else{
+            $result = $amount * $item->Rate;
+        }
+
+
+        return $result;
 
     }
 

@@ -7,7 +7,7 @@ class Proxy extends Model {
 
     protected $fillable = ['ip'];
 
-    protected $table = 'proxys';
+    protected $table = 'reg2005_proxys';
 
     public function get_proxy()
     {

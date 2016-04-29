@@ -13,21 +13,18 @@ class CreateReg2005Proxy extends Migration {
     public function up()
     {
 
-        if (!Schema::hasTable('reg2005_proxys')) {
+        Schema::create('reg2005_proxys', function (Blueprint $table) {
 
-            Schema::create('reg2005_proxys', function (Blueprint $table) {
-                $table->increments('id');
+            $table->increments('id');
 
-                $table->text('ip');
+            $table->text('ip');
 
-                $table->boolean('active');
+            $table->boolean('active');
 
-                $table->timestamp('last_use');
+            $table->timestamp('last_use');
 
-                $table->timestamps();
-            });
-
-        }
+            $table->timestamps();
+        });
     }
 
     /**

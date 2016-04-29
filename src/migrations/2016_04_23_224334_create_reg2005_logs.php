@@ -12,9 +12,8 @@ class CreateReg2005Logs extends Migration {
      */
     public function up()
     {
-        if (!Schema::hasTable('reg2005_logs')) {
 
-            Schema::create('reg2005_logs', function (Blueprint $table) {
+        Schema::create('reg2005_logs', function (Blueprint $table) {
                 $table->increments('id');
 
                 $table->text('error')->nullable();
@@ -22,9 +21,7 @@ class CreateReg2005Logs extends Migration {
                 $table->text('type')->nullable();
 
                 $table->timestamps();
-            });
-
-        }
+        });
 
     }
 

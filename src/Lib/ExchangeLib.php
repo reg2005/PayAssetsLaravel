@@ -70,7 +70,15 @@ class ExchangeLib{
 
     private function clear_array($array = NULL){
         foreach($array as $key=>$it){
-            $result[ $it['-id'] ] = $it;
+
+            if( isset($it['Name']) )
+                $explode = explode('/', $it['Name']);
+
+            if( isset($explode[1]) )
+                $it['Currency'] = $explode[1];
+
+            if( isset($it['-id']) )
+                $result[ $it['-id'] ] = $it;
         }
         return $result;
     }
