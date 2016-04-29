@@ -10,7 +10,10 @@ class Accounts extends Model {
     protected $table = 'reg2005_accounts';
 
 
-    public function get_qiwi(){
+    public function get_qiwi($min_amount = 0, $currency = NULL){
+
+        if($currency)
+            $this->where($currency, '>', $min_amount);
 
         $item = $this
             ->orderBy('last_use', 'asc')
@@ -32,6 +35,32 @@ class Accounts extends Model {
 
         return $item;
 
+    }
+
+    public function updateDataById($data = [], $id){
+        $item = $this
+            ->where('id', '=', $id)
+            ->first();
+
+        if(!$item)
+            return NULL;
+
+        if(!count($data))
+            return NULL;
+
+        $item->fill($data);
+
+        $item->save();
+
+        return TRUE;
+    }
+
+    public function getById($id){
+        $item = $this
+            ->where('id', '=', $id)
+            ->first();
+
+        return $item;
     }
 
     public function get_pm(){

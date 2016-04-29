@@ -40,7 +40,7 @@ class CreateReg2005Accounts extends Migration
                 $table->integer('upd_history')->nullable()->default(0);
 
                 $table->timestamp('last_history')->default('2016-01-01 00:00:00');
-                $table->timestamp('last_use');
+                $table->timestamp('last_use')->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestamps();
             });
 

@@ -1,5 +1,5 @@
 {
-    "name": "reg2005/PayAssetsLaravel",
+    "name": "reg2005/payassetslaravel",
     "type": "library",
     "description": "Laravel 5.2 pay assets for Bitcoin pay package (reg2005/BtcPay), Perfect money (reg2005/PmPay) and Qiwi (QiwiPay)",
     "keywords": [
@@ -12,7 +12,7 @@
         {
             "name": "reg2005",
             "email": "cmp08@ya.ru",
-            "homepage": "beatlelab.ru",
+            "homepage": "http://beatlelab.ru",
             "role": "Developer"
         }
     ],

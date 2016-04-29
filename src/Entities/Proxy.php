@@ -22,8 +22,10 @@ class Proxy extends Model {
 
             $item->save();
 
+            return $item->ip;
+
         }
 
-        return $item;
+        return NULL;
     }
 }

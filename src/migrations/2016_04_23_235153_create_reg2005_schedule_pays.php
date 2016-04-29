@@ -27,19 +27,21 @@ class CreateReg2005SchedulePays extends Migration {
 
             $table->integer('request_id')->nullable();
 
-            $table->integer('timeout')->nullable()->default(0);
+            $table->timestamp('timeout')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
 
-            $table->text('item_of_expenditure')->nullable();
+            $table->text('expenditure')->nullable()->comment = "Referal Or Basic";
 
             $table->timestamp('money_send')->nullable();
 
-            $table->text('send_from')->nullable();
+            $table->integer('send_from_account')->nullable();
 
             $table->text('send_transfer_id')->nullable();
 
             $table->boolean('disable')->default(0);
 
-            $table->integer('error_pay')->nullable()->default(0);
+            //$table->integer('error_pay')->nullable()->default(0);
+
+            $table->integer('count_error_pays')->nullable()->default(0);
 
             $table->text('comment')->nullable();
 
