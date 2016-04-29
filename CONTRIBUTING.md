@@ -25,7 +25,7 @@ We accept contributions via Pull Requests on [Github](https://github.com/reg2005
 ## Running Tests
 
 ``` bash
-$ composer test
+$ phpunit
 ```
 
 
