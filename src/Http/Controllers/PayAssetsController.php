@@ -9,14 +9,17 @@
 namespace reg2005\PayAssetsLaravel\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App;
-use reg2005\QiwiPay\Lib\Qiwi;
+use reg2005\PayAssetsLaravel\Lib\ExchangeLib;
+use reg2005\PayAssetsLaravel\Entities\Exchange;
 
-class QiwiPayController extends Controller
+class PayAssetsController extends Controller
 {
 
     public function index()
     {
-        $ps = (new Qiwi() )->run();
+        $ps = (new ExchangeLib )->get_all();
+
+        (new Exchange)->saveExchange($ps);
 
         return response()->json($ps);
     }

@@ -8,5 +8,5 @@
 
 
 Route::group(['middleware' => ['OnlyCli']], function () {
-    //Route::get('qiwi', 'reg2005\\QiwiPayLaravel\\Http\\Controllers\\QiwiPayController@index');
+    Route::get('pay/exchange', 'reg2005\\PayAssetsLaravel\\Http\\Controllers\\PayAssetsController@index');
 });

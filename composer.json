@@ -19,6 +19,8 @@
     ],
     "require": {
         "illuminate/support": "~5.1",
+        "markwilson/xml-to-json": "^0.1.4",
+        "geerlingguy/ping": "^1.0",
         "php" : "~5.5|~7.0"
     },
     "require-dev": {

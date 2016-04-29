@@ -17,7 +17,7 @@ class PayAssetsLaravelServiceProvider extends ServiceProvider
 
         $router->middleware('OnlyCli', 'reg2005\PayAssetsLaravel\Http\Middleware\OnlyCli');
 
-        //require __DIR__ . '/Http/routes.php';
+        require __DIR__ . '/Http/routes.php';
         $this->publishes([
             __DIR__.'/migrations/' => base_path('/database/migrations'),
         ], 'migrations');
