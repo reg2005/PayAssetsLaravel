@@ -1,0 +1,47 @@
+{
+    "name": "reg2005/PayAssetsLaravel",
+    "type": "library",
+    "description": "Laravel 5.2 pay assets for Bitcoin pay package (reg2005/BtcPay), Perfect money (reg2005/PmPay) and Qiwi (QiwiPay)",
+    "keywords": [
+        "reg2005",
+        "Pay Assets"
+    ],
+    "homepage": "https://github.com/reg2005/PayAssetsLaravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "reg2005",
+            "email": "cmp08@ya.ru",
+            "homepage": "beatlelab.ru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : "~5.5|~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "reg2005\\PayAssetsLaravel\\": "src",
+            "reg2005\\PayAssetsLaravel\\Http\\Controllers\\": "src/Http/Controllers/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "reg2005\\PayAssetsLaravel\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
